@@ -1,0 +1,29 @@
+{
+  "name": "hdfs-sink",
+  "config": {
+    "connector.class": "io.confluent.connect.hdfs3.Hdfs3SinkConnector",
+    "tasks.max": "1",
+    "topics": "postgres.public.customers",
+    "hdfs.url": "hdfs://namenode:8020",
+    "flush.size": "3",
+    "rotate.interval.ms": "60000",
+    "hadoop.conf.dir": "/etc/hadoop/conf",
+    "hadoop.home": "/opt/hadoop",
+    "format.class": "io.confluent.connect.hdfs3.json.JsonFormat",
+    "storage.class": "io.confluent.connect.hdfs3.storage.HdfsStorage",
+    "topics.dir": "/data/topics",
+    "logs.dir": "/data/logs",
+    "partitioner.class": "io.confluent.connect.storage.partitioner.DefaultPartitioner",
+    "path.format": "'year'=YYYY/'month'=MM/'day'=dd",
+    "locale": "en-US",
+    "timezone": "UTC",
+    "confluent.topic.bootstrap.servers": "kafka:9092,kafka2:9092,kafka3:9092",
+    "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "key.converter.schemas.enable": "false",
+    "value.converter.schemas.enable": "false",
+    "errors.tolerance": "all",
+    "errors.deadletterqueue.topic.name": "dlq-hdfs-sink",
+    "errors.deadletterqueue.topic.replication.factor": "1"
+  }
+}
