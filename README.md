@@ -104,7 +104,7 @@ Modern data architectures require capturing database changes without impacting p
 
 ### 1. Clone & Setup
 ```bash
-git clone https://github.com/Evil6angel/Realtime-Streaming-of-Data-Changes-into-HDFS.git
+git clone https://github.com/KenzaBouqdir/Realtime-Streaming-of-Data-Changes-into-HDFS.git
 cd Realtime-Streaming-of-Data-Changes-into-HDFS
 
 # Optional: Configure SSL certificates
